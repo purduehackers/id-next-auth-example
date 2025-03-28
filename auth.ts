@@ -26,6 +26,12 @@ export const PurdueHackersIDProvider: OAuth2Config<IDProfile> = {
   },
   clientId: 'auth-test',
   clientSecret: '0',
+  profile(profile) {
+    return {
+      ...profile,
+      id: String(profile.id)
+    }
+  }
 }
 
 export const authConfig = {
